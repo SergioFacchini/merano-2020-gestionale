@@ -3,14 +3,14 @@
   <img class="picture" src="assets/harold.jpg" />
 
   <div class="name-container">
-    <div class="name">Harold</div>
+    <div class="name">{{mac}}</div>
     <div class="room-name">Room #12</div>
   </div>
 
-  <div class="graph">ada</div>
+  <div class="graph">-</div>
 
   <div class="bpm-current-container">
-    <div class="bpm-current">88</div>
+    <div class="bpm-current">{{bpm}}</div>
     <div class="bpm-title">bpm</div>
   </div>
 
@@ -18,17 +18,17 @@
 
     <div class="bpm-stats">
       <div class="bpm-stat-container">
-        <div class="bpm-stat-item">88</div>
+        <div class="bpm-stat-item">{{statistics.min}}</div>
         <div class="bpm-stat-title">min</div>
       </div>
 
       <div class="bpm-stat-container">
-        <div class="bpm-stat-item">88</div>
+        <div class="bpm-stat-item">{{statistics.avg}}</div>
         <div class="bpm-stat-title">avg</div>
       </div>
 
       <div class="bpm-stat-container">
-        <div class="bpm-stat-item">88</div>
+        <div class="bpm-stat-item">{{statistics.max}}</div>
         <div class="bpm-stat-title">max</div>
       </div>
     </div>
@@ -42,12 +42,12 @@
   </div>
 
   <div class="battery-container">
-    <div class="battery-5-top"></div>
-    <div class="battery-5"></div>
-    <div class="battery-4"></div>
-    <div class="battery-3"></div>
-    <div class="battery-2"></div>
-    <div class="battery-1"></div>
+    <div [class.battery-hide]="battery < 80" class="battery-5-top"></div>
+    <div [class.battery-hide]="battery < 80" class="battery-5"></div>
+    <div [class.battery-hide]="battery < 60" class="battery-4"></div>
+    <div [class.battery-hide]="battery < 40" class="battery-3"></div>
+    <div [class.battery-hide]="battery < 20" class="battery-2"></div>
+    <div [class.battery-hide]="" class="battery-1"></div>
   </div>
 
 </div>

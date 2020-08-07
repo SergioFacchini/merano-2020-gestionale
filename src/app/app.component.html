@@ -2,12 +2,7 @@
 <div id="title-bar">HeartBit Tracker</div>
 <!--<div id="side-bar">asdasda</div>-->
 <div id="items-container">
-  <app-elder></app-elder>
-  <app-elder></app-elder>
-  <app-elder></app-elder>
-  <app-elder></app-elder>
-  <app-elder></app-elder>
-  <app-elder></app-elder>
-  <app-elder></app-elder>
-  <app-elder></app-elder>
+  <div *ngFor="let device of devices$ | async">
+    <app-elder [deviceMac]="device"></app-elder>
+  </div>
 </div>
