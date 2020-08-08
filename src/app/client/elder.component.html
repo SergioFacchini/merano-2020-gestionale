@@ -7,7 +7,13 @@
     <div class="room-name">Room #12</div>
   </div>
 
-  <div class="graph">-</div>
+  <div class="graph">
+    <canvas baseChart height="20"
+            [datasets]="lineChartData"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [chartType]="lineChartType"></canvas>
+  </div>
 
   <div class="bpm-current-container">
     <div class="bpm-current">{{bpm}}</div>

@@ -31,7 +31,6 @@
 }
 
 .graph {
-  background: red;
   flex-grow: 2;
   margin-right: 16px;
 }

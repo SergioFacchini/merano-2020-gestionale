@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ElderComponent } from './client/elder.component';
 import {DataFetcherService} from "./data-fetcher.service";
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import {DataFetcherService} from "./data-fetcher.service";
     ElderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ChartsModule
   ],
   providers: [{provide: DataFetcherService}],
   bootstrap: [AppComponent]
