@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {DataFetcherService} from "./data-fetcher.service";
-import {Subject} from "rxjs";
+import {Observable, Subject} from "rxjs";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,23 @@ import {Subject} from "rxjs";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  devices$: Subject<string[]>;
+  devices$: Observable<string[]>;
 
   constructor(private fetcher: DataFetcherService) {
-    this.devices$ = this.fetcher.devicesChanged;
+    this.devices$ =
+      this.fetcher.devicesChanged.pipe(
+        map(names => {
+          return names.sort((a, b) => {
+            if (a === 'CC:74:2F:87:DC:17') {
+              return -1;
+            } else if (b === 'CC:74:2F:87:DC:17') {
+              return 1;
+            } else {
+              return a.localeCompare(b);
+            }
+          })
+        })
+      );
   }
 
 

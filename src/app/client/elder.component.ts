@@ -11,12 +11,16 @@ import {ChartDataSets, ChartOptions, ChartPoint} from "chart.js";
 export class ElderComponent implements AfterContentInit {
   @Input() deviceMac: string;
 
+  name: string;
+  pictureUrl: string;
+
   mac: string;
   battery: number;
   bpm: number;
   timestamp: number;
   statistics: Statistics;
 
+  roomNumber: number = Math.floor(Math.random() * 40);
 
   public lineChartData: ChartDataSets[] = [
     {data: [], showLine: true},
@@ -25,7 +29,7 @@ export class ElderComponent implements AfterContentInit {
     responsive: true,
     scales: {
       xAxes: [{id: 'x-axis-0', display: false}],
-      yAxes: [{id: 'y-axis-0',},]
+      yAxes: [{id: 'y-axis-0',}]
     },
     annotation: {annotations: [],},
     legend: {display: false},
@@ -54,6 +58,9 @@ export class ElderComponent implements AfterContentInit {
   constructor(private fetcher: DataFetcherService) {}
 
   ngAfterContentInit(): void {
+    this.name       = this.fetcher.resolveName(this.deviceMac);
+    this.pictureUrl = this.fetcher.resolvePicture(this.deviceMac);
+
     this.fetcher.listenOnDevice(this.deviceMac).subscribe(value => {
       this.mac = value.mac;
       this.battery = value.battery;

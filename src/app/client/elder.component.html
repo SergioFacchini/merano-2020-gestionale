@@ -1,14 +1,14 @@
 
 <div id="component-container">
-  <img class="picture" src="assets/harold.jpg" />
+  <img class="picture" src="assets/{{pictureUrl}}" />
 
   <div class="name-container">
-    <div class="name">{{mac}}</div>
-    <div class="room-name">Room #12</div>
+    <div class="name">{{name}}</div>
+    <div class="room-name">Room #{{roomNumber}}</div>
   </div>
 
   <div class="graph">
-    <canvas baseChart height="20"
+    <canvas baseChart height="80"
             [datasets]="lineChartData"
             [options]="lineChartOptions"
             [colors]="lineChartColors"

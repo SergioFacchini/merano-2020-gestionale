@@ -45,4 +45,65 @@ export class DataFetcherService {
   listenOnDevice(deviceMac: string): ReplaySubject<Message> {
     return this.listeners[deviceMac];
   }
+
+  resolveName(deviceMac: string) {
+    switch(deviceMac) {
+      case 'CC:74:2F:87:DC:17':
+        return 'Framba';
+
+      case 'E7:DB:74:09:CA:7F':
+        return 'Castellan';
+
+      case 'client-0':
+        return 'Armando';
+
+      case 'client-1':
+        return 'Harold';
+
+      case 'client-2':
+        return 'András';
+
+      case 'client-3':
+        return 'Oraldo';
+
+      case 'client-4':
+        return 'Orlando';
+
+      case 'client-5':
+        return 'Araldino';
+
+      default:
+        return deviceMac;
+    }
+  }
+
+  resolvePicture(deviceMac: string) {
+    switch(deviceMac) {
+      case 'CC:74:2F:87:DC:17':
+        return 'framba.jpg';
+
+      case 'E7:DB:74:09:CA:7F':
+        return 'sebastiano.jpg';
+
+      case 'client-1':
+        return 'image1.jpg';
+
+      case 'client-2':
+        return 'image2.jpg';
+
+      case 'client-3':
+        return 'image3.jpg';
+
+      case 'client-4':
+        return 'image4.jpg';
+
+      case 'client-5':
+        return 'image5.jpg';
+
+
+      default:
+        return 'harold.jpg';
+    }
+
+  }
 }
