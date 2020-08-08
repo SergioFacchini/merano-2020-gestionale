@@ -1,8 +1,12 @@
 
 <div id="title-bar">HeartBit Tracker</div>
-<!--<div id="side-bar">asdasda</div>-->
-<div id="items-container">
-  <div *ngFor="let device of devices$ | async">
-    <app-elder [deviceMac]="device"></app-elder>
+<div id="body-content">
+  <div id="side-bar">
+    <img id="side-image" src="assets/mock.jpg" />
+  </div>
+  <div id="items-container">
+    <div *ngFor="let device of devices$ | async">
+      <app-elder [deviceMac]="device"></app-elder>
+    </div>
   </div>
 </div>

@@ -47,7 +47,7 @@
 
   </div>
 
-  <div class="battery-container">
+  <div class="battery-container" [title]="battery + '%'">
     <div [class.battery-hide]="battery < 80" class="battery-5-top"></div>
     <div [class.battery-hide]="battery < 80" class="battery-5"></div>
     <div [class.battery-hide]="battery < 60" class="battery-4"></div>

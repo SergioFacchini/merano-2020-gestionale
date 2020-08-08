@@ -1,6 +1,6 @@
 import {AfterContentInit, Component, Input, OnInit} from '@angular/core';
 import {DataFetcherService, Statistics} from "../data-fetcher.service";
-import {Color, Label} from "ng2-charts";
+import {Color} from "ng2-charts";
 import {ChartDataSets, ChartOptions, ChartPoint} from "chart.js";
 
 @Component({
