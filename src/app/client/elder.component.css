@@ -10,6 +10,9 @@
   height: 120px;
   min-height: 120px;
   max-height: 120px;
+
+  box-shadow: 4px 4px 8px #bbb;
+  border-radius: 6px;
 }
 
 .picture {
