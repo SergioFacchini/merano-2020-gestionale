@@ -29,7 +29,9 @@ export class ElderComponent implements AfterContentInit {
     responsive: true,
     scales: {
       xAxes: [{id: 'x-axis-0', display: false}],
-      yAxes: [{id: 'y-axis-0',}]
+      yAxes: [{id: 'y-axis-0',ticks: {
+          // min: 60,max: 140//SEBA
+        }}]
     },
     annotation: {annotations: [],},
     legend: {display: false},

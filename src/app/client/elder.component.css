@@ -79,13 +79,15 @@
 .bpm-stats-container {
   margin-right: 16px;
 
-  width: 100px;
-  min-width: 100px;
-  flex-basis: 100px;
+
+  min-width: 140px;
+  flex-basis: 140px;
 }
 
 .bpm-stats {
   display: flex;
+
+  justify-content: space-evenly;
 }
 
 .bpm-stat-container {
